@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Mahtab Garzin</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+
+<body class="bg-white text-ink antialiased">
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-mint-100">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-14">
+      <a href="index.html" class="font-display text-lg tracking-widest uppercase text-ink font-light">Mahtab Garzin</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-light tracking-wide" aria-label="Main">
+        <a href="work.html"          class="nav-link text-ink font-normal" aria-current="page">Work</a>
+        <a href="about.html"         class="nav-link text-ink/60 hover:text-ink">About</a>
+        <a href="about.html#contact" class="nav-link text-ink/60 hover:text-ink">Contact</a>
+      </nav>
+      <button id="hamburger" class="md:hidden p-2 text-ink/60 hover:text-ink" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="2" y1="6" x2="20" y2="6"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden flex-col bg-white border-t border-mint-100 px-6 py-4 gap-4 text-sm font-light tracking-wide">
+      <a href="work.html" class="text-ink">Work</a>
+      <a href="about.html" class="text-ink/60">About</a>
+      <a href="about.html#contact" class="text-ink/60">Contact</a>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-20 bg-mint-50 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 md:w-96 opacity-10 pointer-events-none" aria-hidden="true">
+      <svg viewBox="0 0 400 500" fill="none">
+        <ellipse cx="260" cy="160" rx="160" ry="220" fill="#4aad99" transform="rotate(-15 260 160)"/>
+      </svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 md:px-10 relative z-10">
+      <p class="fade-up fade-up-1 tag text-mint-500 mb-3 tracking-widest">All Projects</p>
+      <h1 class="fade-up fade-up-2 font-display font-light text-6xl md:text-7xl text-ink leading-tight mb-6">Work</h1>
+      <p class="fade-up fade-up-3 text-ink/60 font-light max-w-lg leading-relaxed">
+        Research and design across government, the NHS and independent clients, from early discovery through to Beta, and from insight to interface.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-[0]" aria-hidden="true">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" class="w-full h-8 md:h-10" fill="white">
+        <path d="M0 40 Q360 0 720 20 Q1080 40 1440 0 L1440 40Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+
+        <!-- ── DVSA AI pilot ─────────────────────────── -->
+        <article class="project-card group border border-ink/10 bg-white overflow-hidden flex flex-col">
+          <div class="aspect-[16/9] bg-mint-100 overflow-hidden">
+            <img src="GitHub_DVSA_AI_Cover.png" class="cover-zoom w-full h-full object-cover" alt="Cover image for the DVSA AI pilot project" />
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <p class="tag text-ink/40 mb-3">DVSA &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; Research</p>
+            <h2 class="font-display font-light text-2xl md:text-3xl text-ink mb-3 leading-snug">Demonstrating value &amp; impact for a pilot AI tool</h2>
+            <p class="text-ink/60 font-light text-sm leading-relaxed mb-5">
+              Research to evaluate the impact and usability of an AI content-generation tool for driving theory test materials, working with DVSA, OpenAI, and Microsoft.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">SME Interviews</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Workshops</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Journey Mapping</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Usability Testing</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Data Ethics</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Gen. AI</span>
+            </div>
+            <p class="mt-auto tag text-ink/35">Case study coming soon</p>
+          </div>
+        </article>
+
+        <!-- ── NHS BSA ───────────────────────────────── -->
+        <article class="project-card group border border-ink/10 bg-white overflow-hidden flex flex-col">
+          <div class="aspect-[16/9] bg-mint-100 overflow-hidden">
+            <img src="nhs_bsa_cover.png" class="cover-zoom w-full h-full object-cover" alt="Cover image for the NHS BSA Dental Services Portal project" />
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <p class="tag text-ink/40 mb-3">NHS BSA &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; Research</p>
+            <h2 class="font-display font-light text-2xl md:text-3xl text-ink mb-3 leading-snug">Debt Management in the new Dental Services Portal</h2>
+            <p class="text-ink/60 font-light text-sm leading-relaxed mb-5">
+              Understanding the needs of internal and external users to guide UX design; usability testing to drive iterations and ensure readiness for Beta assessment.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Usability Testing</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">SME Workshops</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Inclusive Research</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Collaborative Design</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Stakeholder Management</span>
+            </div>
+            <p class="mt-auto tag text-ink/35">Case study coming soon</p>
+          </div>
+        </article>
+
+        <!-- ── Evelina Psychotherapy ─────────────────── -->
+        <article class="project-card group border border-ink/10 bg-white overflow-hidden flex flex-col">
+          <div class="aspect-[16/9] bg-mint-100 overflow-hidden">
+            <div class="cover-zoom w-full h-full flex items-center justify-center bg-mint-100">
+              <span class="font-display font-light italic text-3xl md:text-4xl text-mint-700">Evelina Psychotherapy</span>
+            </div>
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <p class="tag text-ink/40 mb-3">Freelance client &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; Design</p>
+            <h2 class="font-display font-light text-2xl md:text-3xl text-ink mb-3 leading-snug">Designing effortless intakes — for therapist and client</h2>
+            <p class="text-ink/60 font-light text-sm leading-relaxed mb-5">
+              Unifying the user experience and client onboarding process for a private therapist; aligning with the established website branding, refining content and sourcing hosting platforms; integrating with the site.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Brand</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Identity</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Co-design</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Visual Design</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Content Review</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Solution Development</span>
+            </div>
+            <p class="mt-auto tag text-ink/35">Case study coming soon</p>
+          </div>
+        </article>
+
+        <!-- ── DVSA MOT History API ──────────────────── -->
+        <article class="project-card group border border-ink/10 bg-white overflow-hidden flex flex-col">
+          <div class="aspect-[16/9] bg-sand overflow-hidden">
+            <img src="GitHub_API_Cover.png" class="cover-zoom w-full h-full object-cover" alt="Cover image for the DVSA MOT History API project" />
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <p class="tag text-ink/40 mb-3">DVSA &nbsp;·&nbsp; 2023–24 &nbsp;·&nbsp; Research</p>
+            <h2 class="font-display font-light text-2xl md:text-3xl text-ink mb-3 leading-snug">Improving registration &amp; support journeys for a new API</h2>
+            <p class="text-ink/60 font-light text-sm leading-relaxed mb-5">
+              Discovery and Alpha research to guide the redesign of new registration and support journeys of the MOT History API, supporting new and existing users’ experiences.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Interviews</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Survey</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Journey Mapping</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Usability Testing</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Stakeholder Management</span>
+            </div>
+            <p class="mt-auto tag text-ink/35">Case study coming soon</p>
+          </div>
+        </article>
+
+        <!-- ── Mindful wardrobe ──────────────────────── -->
+        <article class="project-card group border border-ink/10 bg-white overflow-hidden flex flex-col">
+          <div class="aspect-[16/9] bg-mint-100 overflow-hidden">
+            <img src="mindful_wardrobe_cover.jpg" class="cover-zoom w-full h-full object-cover" alt="Cover image for the mindful wardrobe project" />
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <p class="tag text-ink/40 mb-3">Personal project &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; Design</p>
+            <h2 class="font-display font-light text-2xl md:text-3xl text-ink mb-3 leading-snug">Nudging sustainable fashion habits through mindful touch</h2>
+            <p class="text-ink/60 font-light text-sm leading-relaxed mb-5">
+              Inspiring sustainable use and greater care for our wardrobes; designing a guided mindfulness practice that grounds the mind and concentrates on appreciation of our clothes, through tactile experiences.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Market Research</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">User Research</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Audio UX</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Content Design</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">UX/UI</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Prototyping</span>
+            </div>
+            <p class="mt-auto tag text-ink/35">Case study coming soon</p>
+          </div>
+        </article>
+
+        <!-- ── Central gov AI discovery (no public case study) ── -->
+        <article class="project-card group border border-ink/10 bg-white overflow-hidden flex flex-col">
+          <div class="aspect-[16/9] bg-sand overflow-hidden">
+            <div class="cover-zoom w-full h-full flex items-center justify-center bg-sand">
+              <svg width="56" height="56" viewBox="0 0 12 12" fill="none" stroke="#7dcab8" stroke-width="0.6" aria-hidden="true"><rect x="2" y="5" width="8" height="6" rx="1"/><path d="M4 5V3.5a2 2 0 014 0V5"/></svg>
+            </div>
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <p class="tag text-ink/40 mb-3">Public-sector client &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Research</p>
+            <h2 class="font-display font-light text-2xl md:text-3xl text-ink mb-3 leading-snug">User-centred recommendations for AI opportunities</h2>
+            <p class="text-ink/60 font-light text-sm leading-relaxed mb-5">
+              Led discovery research for a central government client exploring the value of using several AI tools in current workflows, uncovering user needs and pain points to inform strategic recommendations for senior decision-makers.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Survey</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">SME Workshop</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Interviews</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Journey Mapping</span>
+              <span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Gen. AI</span>
+            </div>
+            <a href="about.html#contact" class="mt-auto self-start inline-flex items-center gap-2 text-sm font-light border border-ink/20 text-ink/60 px-4 py-2 hover:border-ink/50 hover:text-ink transition-colors">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="5" width="8" height="6" rx="1"/><path d="M4 5V3.5a2 2 0 014 0V5"/></svg>
+              Available on request
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 bg-ink border-t border-white/10 text-white/30 text-xs font-light">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between gap-2">
+      <span>© <span id="year"></span> Mahtab Garzin. All rights reserved.</span>
+      <a href="index.html" class="text-white/30 hover:text-white/60 transition-colors">← Back to home</a>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* Shared styles for every page */
+body { font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, .font-display { font-family: 'Cormorant Garamond', serif; }
+html { scroll-behavior: smooth; }
+
+/* Nav link hover underline */
+.nav-link { position: relative; padding-bottom: 2px; }
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after { width: 100%; }
+
+/* Small uppercase label */
+.tag { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+
+/* Project cards: gentle lift on hover, cover image zooms slowly */
+.project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(26,38,38,0.10); }
+.cover-zoom { transition: transform 0.7s ease; }
+.project-card:hover .cover-zoom { transform: scale(1.05); }
+
+/* Arrival animation — used on page headers only, plays once on load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up   { animation: fadeUp 0.9s ease both; }
+.fade-up-1 { animation-delay: 0.1s; }
+.fade-up-2 { animation-delay: 0.28s; }
+.fade-up-3 { animation-delay: 0.46s; }
+.fade-up-4 { animation-delay: 0.64s; }
+
+/* Mobile nav */
+#mobile-menu { display: none; }
+#mobile-menu.open { display: flex; }
+
+/* Respect visitors who have asked their device to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
