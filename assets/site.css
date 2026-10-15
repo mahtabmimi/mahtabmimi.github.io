@@ -16,7 +16,9 @@ html { scroll-behavior: smooth; }
 /* Small uppercase label */
 .tag { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
 
-/* Project cards: cover image zooms slowly on hover */
+/* Project cards: gentle lift on hover, cover image zooms slowly */
+.project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(26,38,38,0.10); }
 .cover-zoom { transition: transform 0.7s ease; }
 .group:hover .cover-zoom { transform: scale(1.04); }
 
