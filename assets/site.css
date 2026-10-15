@@ -16,11 +16,9 @@ html { scroll-behavior: smooth; }
 /* Small uppercase label */
 .tag { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
 
-/* Project cards: gentle lift on hover, cover image zooms slowly */
-.project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(26,38,38,0.10); }
+/* Project cards: cover image zooms slowly on hover */
 .cover-zoom { transition: transform 0.7s ease; }
-.project-card:hover .cover-zoom { transform: scale(1.05); }
+.group:hover .cover-zoom { transform: scale(1.04); }
 
 /* Arrival animation — used on page headers only, plays once on load */
 @keyframes fadeUp {
