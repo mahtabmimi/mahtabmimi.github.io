@@ -26,10 +26,17 @@ html { scroll-behavior: smooth; }
 .client-logo { filter: grayscale(1); opacity: 0.45; transition: opacity 0.3s ease, filter 0.3s ease; }
 .client-logo:hover { filter: grayscale(0); opacity: 1; }
 
-/* Kind words: muted like the client logos, full ink on hover */
+/* Kind words: muted like the client logos, full ink on hover; swipeable row */
 .kind-quote blockquote { color: rgba(26,38,38,0.55); transition: color 0.3s ease; }
 .kind-quote:hover blockquote { color: #1a2626; }
 .kind-quote::before { content: ""; display: block; width: 28px; height: 1px; background: #aee0d1; margin: 0 auto 18px; }
+.kw-track { list-style: none; margin: 0; padding: 0; display: flex; column-gap: 40px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+.kw-track::-webkit-scrollbar { display: none; }
+.kw-track:focus-visible { outline: 2px solid #4aad99; outline-offset: 6px; }
+.kw-item { flex: 0 0 100%; scroll-snap-align: start; }
+@media (min-width: 640px) { .kw-item { flex-basis: calc((100% - 40px) / 2); } }
+@media (min-width: 1024px) { .kw-item { flex-basis: calc((100% - 120px) / 4); } }
+@media (prefers-reduced-motion: reduce) { .kw-track { scroll-behavior: auto; } }
 
 /* Arrival animation — used on page headers only, plays once on load */
 @keyframes fadeUp {

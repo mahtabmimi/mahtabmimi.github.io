@@ -187,47 +187,71 @@
   <!-- ============================================================
        KIND WORDS — static, all quotes visible
   ============================================================ -->
-  <section class="py-20 md:py-24 bg-white border-t border-ink/5" aria-labelledby="kind-words">
+  <section class="pt-10 pb-20 md:pb-24 bg-white overflow-hidden" aria-labelledby="kind-words">
+    <div class="overflow-hidden leading-[0] mb-12" aria-hidden="true">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" class="w-full h-8 md:h-10" fill="none">
+        <path d="M0 20 Q180 0 360 20 Q540 40 720 20 Q900 0 1080 20 Q1260 40 1440 20" stroke="#aee0d1" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <h2 id="kind-words" class="tag text-ink/40 tracking-widest text-center mb-12">Kind words</h2>
-      <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
-        <li>
+      <div class="kw" role="region" aria-roledescription="carousel" aria-label="Kind words">
+        <ul class="kw-track" id="kw-track" tabindex="0">
+        <li class="kw-item">
           <figure class="kind-quote h-full flex flex-col text-center">
-            <blockquote class="font-display font-light text-lg md:text-xl leading-snug flex-1">“She can take a vague or ambiguous ask and turn it into something structured and actionable.”</blockquote>
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“She can take a vague or ambiguous ask and turn it into something structured and actionable.”</blockquote>
             <figcaption class="mt-5">
               <span class="block text-sm font-light text-ink">Kat Gibbens</span>
               <span class="block tag text-ink/40 mt-1">Product Manager, Capgemini</span>
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="kw-item">
           <figure class="kind-quote h-full flex flex-col text-center">
-            <blockquote class="font-display font-light text-lg md:text-xl leading-snug flex-1">“You uncovered critical insights that helped open eyes across the organisation.”</blockquote>
-            <figcaption class="mt-5">
-              <span class="block text-sm font-light text-ink">Laura Butler</span>
-              <span class="block tag text-ink/40 mt-1">Product Manager, Capgemini</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="kind-quote h-full flex flex-col text-center">
-            <blockquote class="font-display font-light text-lg md:text-xl leading-snug flex-1">“She distilled complex information into a cohesive, actionable narrative the whole team could follow.”</blockquote>
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“She distilled complex information into a cohesive, actionable narrative the whole team could follow.”</blockquote>
             <figcaption class="mt-5">
               <span class="block text-sm font-light text-ink">Sakshi Namdeo</span>
               <span class="block tag text-ink/40 mt-1">User Researcher, Capgemini</span>
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="kw-item">
           <figure class="kind-quote h-full flex flex-col text-center">
-            <blockquote class="font-display font-light text-lg md:text-xl leading-snug flex-1">“Her manner with users was exemplary, drawing out high-quality insights.”</blockquote>
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“You uncovered critical insights that helped open eyes across the organisation.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Laura Butler</span>
+              <span class="block tag text-ink/40 mt-1">Product Manager, Capgemini</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“Her manner with users was exemplary, drawing out high-quality insights.”</blockquote>
             <figcaption class="mt-5">
               <span class="block text-sm font-light text-ink">Andy S.</span>
               <span class="block tag text-ink/40 mt-1">Senior User Researcher, Kainos</span>
             </figcaption>
           </figure>
         </li>
-      </ul>
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“I’ve been super impressed by how she picks up and runs with everything I throw at her.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Matthew Lamb</span>
+              <span class="block tag text-ink/40 mt-1">Experience Design Lead, Kainos</span>
+            </figcaption>
+          </figure>
+        </li>
+        </ul>
+        <div class="flex items-center justify-center gap-4 mt-10">
+          <button type="button" id="kw-prev" aria-label="Previous quote" class="w-10 h-10 flex items-center justify-center rounded-full border border-ink/15 text-ink/50 hover:text-ink hover:border-ink/40 transition-colors disabled:opacity-30 disabled:pointer-events-none">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+          </button>
+          <button type="button" id="kw-next" aria-label="Next quote" class="w-10 h-10 flex items-center justify-center rounded-full border border-ink/15 text-ink/50 hover:text-ink hover:border-ink/40 transition-colors disabled:opacity-30 disabled:pointer-events-none">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -268,5 +292,23 @@
   </footer>
 
   <script src="assets/site.js"></script>
+  <script>
+    // Kind words carousel: moves only when the visitor clicks or swipes
+    (function () {
+      var track = document.getElementById('kw-track');
+      if (!track) return;
+      var prev = document.getElementById('kw-prev'), next = document.getElementById('kw-next');
+      function step() { var i = track.querySelector('.kw-item'); return i ? i.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0) : track.clientWidth; }
+      function update() {
+        prev.disabled = track.scrollLeft <= 2;
+        next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      }
+      prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
 </body>
 </html>
