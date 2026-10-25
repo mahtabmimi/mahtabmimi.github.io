@@ -33,6 +33,7 @@ html { scroll-behavior: smooth; }
 .kw { position: relative; }
 .kw-track { list-style: none; margin: 0; padding: 0 4px; display: flex; column-gap: 48px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .kw-track.is-gliding { scroll-snap-type: none; }
+@media (hover: hover) { .kw-track { scroll-snap-type: none; } }
 .kw-track::-webkit-scrollbar { display: none; }
 .kw-track:focus-visible { outline: 2px solid #4aad99; outline-offset: 6px; }
 .kw-item { flex: 0 0 100%; scroll-snap-align: start; }
