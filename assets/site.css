@@ -26,6 +26,11 @@ html { scroll-behavior: smooth; }
 .client-logo { filter: grayscale(1); opacity: 0.45; transition: opacity 0.3s ease, filter 0.3s ease; }
 .client-logo:hover { filter: grayscale(0); opacity: 1; }
 
+/* Kind words: muted like the client logos, full ink on hover */
+.kind-quote blockquote { color: rgba(26,38,38,0.55); transition: color 0.3s ease; }
+.kind-quote:hover blockquote { color: #1a2626; }
+.kind-quote::before { content: ""; display: block; width: 28px; height: 1px; background: #aee0d1; margin: 0 auto 18px; }
+
 /* Arrival animation — used on page headers only, plays once on load */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
