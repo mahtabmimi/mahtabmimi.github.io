@@ -44,10 +44,13 @@
     @media (prefers-reduced-motion: reduce) {
       .paisley-body, .paisley-flourish, .paisley-sway { animation: none; }
     }
+      .paisley-sway:not(.is-playing) .paisley-layer { opacity: 0; animation: none; }
+    .paisley-sway:not(.is-playing) { animation: none; }
   </style>
 </head>
 
 <body class="bg-white text-ink antialiased">
+  <button id="paisley-replay" type="button" style="position:fixed;right:16px;bottom:16px;z-index:60" class="bg-ink text-white text-xs tracking-wide font-light px-4 py-2 rounded-full shadow hover:bg-mint-700">Replay animation</button>
 
   <!-- ============================================================
        NAVIGATION
@@ -115,7 +118,7 @@
       </div>
 
       <div class="hidden md:flex justify-end items-center" aria-hidden="true">
-        <div class="paisley-sway relative w-64 lg:w-80" style="aspect-ratio:729/1156">
+        <div id="paisley" title="Click to replay" class="paisley-sway relative w-64 lg:w-80" style="aspect-ratio:729/1156;cursor:pointer">
           <picture><source srcset="art/paisley-flourish.webp" type="image/webp" /><img src="art/paisley-flourish.png" alt="" class="paisley-layer paisley-flourish" width="729" height="1156" /></picture>
           <picture><source srcset="art/paisley-body.webp" type="image/webp" /><img src="art/paisley-body.png" alt="" class="paisley-layer paisley-body" width="729" height="1156" /></picture>
         </div>
@@ -363,6 +366,25 @@
       track.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
       window.addEventListener('resize', update);
       update();
+    })();
+  </script>
+  <script>
+    // Play the paisley swirl once both layers have loaded; click it (or press Replay) to watch again.
+    (function () {
+      var wrap = document.getElementById('paisley');
+      if (!wrap) return;
+      var imgs = wrap.querySelectorAll('img');
+      function play() {
+        wrap.classList.remove('is-playing');
+        void wrap.offsetWidth;            // restart the CSS animations
+        requestAnimationFrame(function () { wrap.classList.add('is-playing'); });
+      }
+      Promise.all(Array.prototype.map.call(imgs, function (img) {
+        return img.decode ? img.decode().catch(function () {}) : Promise.resolve();
+      })).then(play);
+      wrap.addEventListener('click', play);
+      var btn = document.getElementById('paisley-replay');
+      if (btn) btn.addEventListener('click', play);
     })();
   </script>
 </body>
