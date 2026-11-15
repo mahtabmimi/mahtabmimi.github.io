@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Paisley variant] Mahtab Garzin — User Researcher</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=3" />
+  <style>
+    /* Paisley swirls in from its curled tail, then sways gently */
+    .paisley-swirl {
+      transform-origin: 42% 86%;
+      animation: paisleySwirl 2.4s cubic-bezier(.2,.75,.25,1) 0.35s both;
+      filter: drop-shadow(0 18px 30px rgba(23,92,82,0.10));
+    }
+    @keyframes paisleySwirl {
+      0%   { opacity: 0; transform: rotate(-150deg) scale(0.25); clip-path: circle(0% at 42% 86%); }
+      45%  { opacity: 1; }
+      100% { opacity: 1; transform: rotate(0deg) scale(1);     clip-path: circle(150% at 42% 86%); }
+    }
+    .paisley-sway { transform-origin: 42% 90%; animation: paisleySway 9s ease-in-out 2.8s infinite; }
+    @keyframes paisleySway {
+      0%, 100% { transform: rotate(0deg); }
+      50%      { transform: rotate(-2deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .paisley-swirl, .paisley-sway { animation: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-ink antialiased">
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-mint-100">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-14">
+      <a href="index.html" class="font-display text-lg tracking-widest uppercase text-ink font-light">Mahtab Garzin</a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-light tracking-wide" aria-label="Main">
+        <a href="work.html"          class="nav-link text-ink/70 hover:text-ink">Work</a>
+        <a href="about.html"         class="nav-link text-ink/70 hover:text-ink">About</a>
+        <a href="about.html#contact" class="nav-link text-ink/70 hover:text-ink">Contact</a>
+      </nav>
+
+      <button id="hamburger" class="md:hidden p-2 text-ink/60 hover:text-ink" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="2" y1="6" x2="20" y2="6"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden flex-col bg-white border-t border-mint-100 px-6 py-4 gap-4 text-sm font-light tracking-wide">
+      <a href="work.html"          class="text-ink/70 hover:text-ink">Work</a>
+      <a href="about.html"         class="text-ink/70 hover:text-ink">About</a>
+      <a href="about.html#contact" class="text-ink/70 hover:text-ink">Contact</a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO — the only animated arrival on the page
+  ============================================================ -->
+  <section id="home" class="min-h-screen bg-mint-50 flex flex-col justify-center relative overflow-hidden pt-14">
+
+    <div class="absolute top-0 right-0 w-72 md:w-[500px] opacity-20 pointer-events-none select-none" aria-hidden="true">
+      <svg viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="320" cy="180" rx="180" ry="260" fill="#4aad99" transform="rotate(-20 320 180)" />
+        <ellipse cx="360" cy="400" rx="120" ry="160" fill="#7dcab8" transform="rotate(15 360 400)" />
+        <circle cx="200" cy="100" r="60" fill="#aee0d1"/>
+      </svg>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <div>
+        <p class="fade-up fade-up-1 tag text-mint-600 mb-4 tracking-widest">User Researcher &nbsp;·&nbsp; Based in London</p>
+
+        <h1 class="fade-up fade-up-2 font-display font-light text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-ink mb-8">
+          Mahtab <br/>Garzin
+        </h1>
+
+        <p class="fade-up fade-up-3 text-ink/70 font-light leading-relaxed max-w-md mb-4">
+          With a natural curiosity for how people experience the world, I gather insights to understand users' thoughts, feelings, and behaviours.
+        </p>
+        <p class="fade-up fade-up-3 text-ink/70 font-light leading-relaxed max-w-md mb-10">
+          Translating data into actionable insights and working within multidisciplinary teams to create meaningful and intuitive experiences.
+        </p>
+
+        <div class="fade-up fade-up-4 flex flex-wrap gap-4">
+          <a href="work.html" class="inline-flex items-center gap-2 bg-ink text-white px-6 py-3 text-sm tracking-wide font-light hover:bg-mint-700 transition-colors">
+            View Work
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="about.html#contact" class="inline-flex items-center gap-2 border border-ink/30 text-ink px-6 py-3 text-sm tracking-wide font-light hover:border-ink transition-colors">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden md:flex justify-end items-center" aria-hidden="true">
+        <div class="paisley-sway">
+          <picture>
+            <source srcset="art/paisley.webp" type="image/webp" />
+            <img src="art/paisley.png" alt="" class="paisley-swirl w-64 lg:w-80 h-auto" width="729" height="1156" />
+          </picture>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-[0]" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" class="w-full h-10 md:h-14" fill="white">
+        <path d="M0 60 Q360 0 720 30 Q1080 60 1440 0 L1440 60Z"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CLIENTS — greyed logos; swap each <span> for an <img> when files arrive:
+       <img src="logos/dvsa.svg" alt="DVSA" class="client-logo h-8 md:h-10 w-auto" />
+  ============================================================ -->
+  <section class="pt-14 pb-4 md:pt-16 bg-white" aria-labelledby="clients-label">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <p id="clients-label" class="tag text-ink/40 tracking-widest text-center mb-8">Clients I've worked with</p>
+      <ul class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 md:gap-x-16">
+        <li><img src="logos/nhsbsa.png" alt="NHS Business Services Authority" class="client-logo h-14 md:h-16 w-auto" /></li>
+        <li><img src="logos/dvsa.png" alt="Driver and Vehicle Standards Agency" class="client-logo h-14 md:h-16 w-auto" /></li>
+        <li><img src="logos/defra.png" alt="Department for Environment, Food and Rural Affairs" class="client-logo h-14 md:h-16 w-auto" /></li>
+        <li><img src="logos/dwp.svg" alt="Department for Work and Pensions" class="client-logo h-14 md:h-16 w-auto" /></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SELECTED WORK — three flagship projects, no scroll animation
+  ============================================================ -->
+  <section id="work" class="pt-16 pb-24 md:pt-20 md:pb-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+
+      <h2 class="font-body text-sm md:text-base font-medium uppercase tracking-widest text-mint-500 mb-10 md:mb-12">Selected Work</h2>
+
+      <!-- CARDS:START -->
+      <div class="grid md:grid-cols-12 gap-8 lg:gap-10">
+        <article class="project-card group md:col-span-7 border border-ink/10 bg-white overflow-hidden flex flex-col">
+          <div class="relative overflow-hidden h-64 md:h-80 lg:h-96">
+            <div class="cover-zoom w-full h-full flex items-center justify-center bg-mint-100 px-6 text-center"><span class="font-display font-light italic text-4xl md:text-5xl text-mint-700 leading-tight">NHS BSA<br/>Dental Services</span></div>
+            <span class="absolute top-4 left-4 tag bg-white/90 text-ink/60 px-3 py-1.5">Case study soon</span>
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <p class="tag text-ink/40 mb-2">NHS BSA &nbsp;·&nbsp; 2025</p>
+            <h3 class="font-display font-light text-2xl md:text-3xl text-ink mb-2 leading-snug" style="text-wrap:balance">Debt management in the Dental Services Portal</h3>
+            <p class="text-ink/60 font-light text-sm leading-relaxed mb-4 max-w-md">Researching how dental practices and NHS staff handle debt, and testing the new portal ready for Beta.</p>
+            <div class="flex flex-wrap gap-2"><span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Usability Testing</span><span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">SME Workshops</span><span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Inclusive Research</span><span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Collaborative Design</span></div>
+            
+          </div>
+        </article>
+        <article class="project-card group md:col-span-5 border border-ink/10 bg-white overflow-hidden flex flex-col">
+          <div class="relative overflow-hidden h-64 md:h-80 lg:h-96">
+            <div class="cover-zoom w-full h-full flex items-center justify-center bg-mint-100 px-6 text-center"><span class="font-display font-light italic text-4xl md:text-5xl text-mint-700 leading-tight">Evelina<br/>Psychotherapy</span></div>
+            <span class="absolute top-4 left-4 tag bg-white/90 text-ink/60 px-3 py-1.5">Case study soon</span>
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <p class="tag text-ink/40 mb-2">Freelance client &nbsp;·&nbsp; 2024</p>
+            <h3 class="font-display font-light text-2xl md:text-3xl text-ink mb-2 leading-snug" style="text-wrap:balance">Effortless intakes, for therapist and client</h3>
+            <p class="text-ink/60 font-light text-sm leading-relaxed mb-4 max-w-md">Redesigning how new clients find, contact and join a private psychotherapy practice.</p>
+            <div class="flex flex-wrap gap-2"><span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Brand Identity</span><span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Co-design</span><span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Visual Design</span><span class="tag bg-mint-50 text-mint-700 px-3 py-1 rounded-full">Content Review</span></div>
+            
+          </div>
+        </article>
+      </div>
+      <!-- CARDS:END -->
+
+      <div class="flex justify-center mt-14">
+        <a href="work.html" class="inline-flex items-center gap-2 border border-ink/20 text-ink px-7 py-3 text-sm font-light tracking-wide hover:bg-ink hover:text-white transition-colors">
+          All work
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       KIND WORDS — static, all quotes visible
+  ============================================================ -->
+  <section class="pb-[5.95rem] md:pb-[7.65rem] bg-mint-50 overflow-hidden" aria-labelledby="kind-words">
+    <div class="overflow-hidden leading-[0] mb-16 md:mb-20 bg-white pt-10" aria-hidden="true">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" class="w-full h-8 md:h-10 block" fill="none" style="background:#f0f9f6">
+        <path d="M0 20 Q180 0 360 20 Q540 40 720 20 Q900 0 1080 20 Q1260 40 1440 20 L1440 0 L0 0 Z" fill="#fff"/>
+        <path d="M0 20 Q180 0 360 20 Q540 40 720 20 Q900 0 1080 20 Q1260 40 1440 20" stroke="#aee0d1" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="kw" role="region" aria-roledescription="carousel" aria-label="Kind words">
+        <ul class="kw-track" id="kw-track" tabindex="0">
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“She managed stakeholders exceptionally well across a wide range of seniority levels. Her approach was calm, confident, and considered, which helped to build credibility and trust early on.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Product Manager</span>
+              <span class="block tag text-ink/40 mt-1">Public sector client</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“She distilled complex information into a cohesive, actionable narrative the whole team could follow.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Sakshi Namdeo</span>
+              <span class="block tag text-ink/40 mt-1">User Researcher, Capgemini</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“She can take a vague or ambiguous ask and turn it into something structured and actionable.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Kat Gibbens</span>
+              <span class="block tag text-ink/40 mt-1">Product Manager, Capgemini</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“Mahtab will always invest her time in getting things right, which makes her a great leader within the research space.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Puja Soneji</span>
+              <span class="block tag text-ink/40 mt-1">Service Designer, Capgemini</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“You uncovered critical insights that helped open eyes across the organisation.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Laura Butler</span>
+              <span class="block tag text-ink/40 mt-1">Product Manager, Capgemini</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“Her manner with users was exemplary, drawing out high-quality insights.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Andy S.</span>
+              <span class="block tag text-ink/40 mt-1">Senior User Researcher, Kainos</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="kw-item">
+          <figure class="kind-quote h-full flex flex-col text-center">
+            <blockquote class="font-body font-light text-base md:text-lg leading-relaxed flex-1">“I’ve been super impressed by how she picks up and runs with everything I throw at her.”</blockquote>
+            <figcaption class="mt-5">
+              <span class="block text-sm font-light text-ink">Matthew Lamb</span>
+              <span class="block tag text-ink/40 mt-1">Experience Design Lead, Kainos</span>
+            </figcaption>
+          </figure>
+        </li>
+        </ul>
+        <button type="button" class="kw-edge kw-left" id="kw-prev" aria-label="Previous quote">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+        </button>
+        <button type="button" class="kw-edge kw-right" id="kw-next" aria-label="Next quote">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+        </button>
+      </div>
+      <h2 id="kind-words" class="font-display font-light italic text-3xl md:text-4xl text-mint-700 text-center mt-[6.8rem] md:mt-[8.5rem]">Kind words</h2>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT BAND
+  ============================================================ -->
+  <section class="py-20 md:py-28 bg-ink text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-80 h-80 opacity-5 pointer-events-none" aria-hidden="true">
+      <svg viewBox="0 0 320 320" fill="none">
+        <circle cx="160" cy="160" r="140" stroke="white" stroke-width="1"/>
+        <circle cx="160" cy="160" r="100" stroke="white" stroke-width="0.5"/>
+        <circle cx="160" cy="160" r="60" stroke="white" stroke-width="0.5"/>
+      </svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 md:px-10 relative z-10 md:flex md:items-end md:justify-between gap-10">
+      <div class="max-w-xl mb-10 md:mb-0">
+        <h2 class="font-display font-light text-5xl md:text-6xl text-white leading-tight">Let's work<br/>together</h2>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="about.html#contact" class="inline-flex items-center gap-2 bg-white text-ink px-6 py-3 text-sm tracking-wide font-light hover:bg-mint-100 transition-colors">
+          Get in touch
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="about.html" class="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 text-sm tracking-wide font-light hover:border-white transition-colors">
+          About me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 bg-ink border-t border-white/10 text-white/30 text-xs font-light">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between gap-2">
+      <span>© <span id="year"></span> Mahtab Garzin. All rights reserved.</span>
+      <span>Design &amp; code — built with Tailwind CSS</span>
+    </div>
+  </footer>
+
+  <script src="assets/site.js?v=3"></script>
+  <script>
+    // Kind words carousel: hover an edge to glide that way (speeds up the longer you hover),
+    // click an edge to jump one quote, swipe on touch. Never moves on its own.
+    (function () {
+      var track = document.getElementById('kw-track');
+      if (!track) return;
+      var prev = document.getElementById('kw-prev'), next = document.getElementById('kw-next');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var dir = 0, start = 0, raf = null;
+
+      function step() { var i = track.querySelector('.kw-item'); return i.getBoundingClientRect().width + 48; }
+      function update() {
+        prev.classList.toggle('is-end', track.scrollLeft <= 2);
+        next.classList.toggle('is-end', track.scrollLeft + track.clientWidth >= track.scrollWidth - 2);
+      }
+      function tick(t) {
+        if (!dir) return;
+        if (!start) start = t;
+        var held = Math.min((t - start) / 1200, 1);          // ramps up over ~1.2s
+        var speed = 2 + held * 12;                           // 2px → 14px per frame
+        track.scrollLeft += dir * speed;
+        update();
+        raf = requestAnimationFrame(tick);
+      }
+      function go(d) {
+        if (reduce) return;
+        dir = d; start = 0;
+        track.classList.add('is-gliding');
+        cancelAnimationFrame(raf); raf = requestAnimationFrame(tick);
+      }
+      function stop() {
+        dir = 0; cancelAnimationFrame(raf);
+        track.classList.remove('is-gliding');
+      }
+      [[prev, -1], [next, 1]].forEach(function (pair) {
+        var el = pair[0], d = pair[1];
+        el.addEventListener('mouseenter', function () { go(d); });
+        el.addEventListener('mouseleave', stop);
+        el.addEventListener('click', function () { stop(); track.scrollBy({ left: d * step(), behavior: reduce ? 'auto' : 'smooth' }); });
+      });
+      track.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+</html>
