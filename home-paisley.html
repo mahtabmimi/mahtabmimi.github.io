@@ -13,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css?v=3" />
   <style>
-    /* Paisley flows in like water along its own slanted S, rippling until it settles */
-    .paisley-sway.is-playing { transform-origin: 40% 98%; animation: paisleySway 9s ease-in-out 3.6s infinite; }
+    /* Paisley swooshes in along its own slanted S, led by a mint water streak */
+    .paisley-sway.is-playing { transform-origin: 40% 98%; animation: paisleySway 9s ease-in-out 2.4s infinite; }
     @keyframes paisleySway {
       0%, 100% { transform: rotate(0deg); }
       50%      { transform: rotate(-2deg); }
@@ -95,38 +95,34 @@
         <div id="paisley" title="Click to replay" class="paisley-sway relative w-64 lg:w-80" style="aspect-ratio:729/1156;cursor:pointer">
           <svg viewBox="0 0 729 1156" class="w-full h-full" style="overflow:visible">
             <defs>
-              <!-- liquid edge: the reveal's outline is pushed around by moving noise, so it flows rather than paints -->
-              <filter id="pz-liquid" x="-30%" y="-30%" width="160%" height="160%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="4" result="n">
-                  <animate data-at="0" attributeName="baseFrequency" values="0.012 0.02;0.02 0.03;0.012 0.02" dur="3.2s" begin="indefinite" fill="freeze"/>
-                </feTurbulence>
-                <feDisplacementMap in="SourceGraphic" in2="n" scale="90" xChannelSelector="R" yChannelSelector="G"/>
-              </filter>
-              <!-- water ripple on the drawing itself, calming to stillness -->
-              <filter id="pz-ripple" x="-10%" y="-10%" width="120%" height="120%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.008 0.03" numOctaves="1" seed="9" result="w">
-                  <animate data-at="0" attributeName="baseFrequency" values="0.008 0.03;0.01 0.045;0.008 0.03" dur="3.4s" begin="indefinite" fill="freeze"/>
-                </feTurbulence>
-                <feDisplacementMap in="SourceGraphic" in2="w" scale="0" xChannelSelector="R" yChannelSelector="G">
-                  <animate data-at="0" attributeName="scale" values="32;18;6;0" keyTimes="0;0.45;0.8;1" dur="3.4s" begin="indefinite" fill="freeze"/>
-                </feDisplacementMap>
-              </filter>
+              <filter id="pz-smooth" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+              <filter id="pz-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter>
               <mask id="pz-mask" maskUnits="userSpaceOnUse" x="-100" y="-100" width="929" height="1356">
-                <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" filter="url(#pz-liquid)">
-                  <!-- flows up the paisley's own S: body curl → tail → stem → top leaf -->
-                  <path pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" stroke-width="270"
-                        d="M200 1090 C110 1030 160 915 255 880 C335 850 385 760 378 600 C372 520 315 470 310 380 C305 300 380 250 450 220 C505 195 525 145 505 70"><animate data-at="200" attributeName="stroke-dashoffset" from="1" to="0" dur="2.1s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 .05 .4 1"/></path>
-                  <path pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" stroke-width="170" d="M335 860 C235 875 160 825 170 720 C176 650 240 615 290 655"><animate data-at="750" attributeName="stroke-dashoffset" from="1" to="0" dur="1.0s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".3 .1 .3 1"/></path>
-                  <path pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" stroke-width="160" d="M320 450 C240 420 185 385 205 320 M305 465 C235 470 185 505 195 560"><animate data-at="1300" attributeName="stroke-dashoffset" from="1" to="0" dur="1.0s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".3 .1 .3 1"/></path>
-                  <path pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" stroke-width="160" d="M420 250 C480 285 525 335 515 440 M455 230 C535 215 600 230 650 205 M520 300 C570 300 615 320 615 345"><animate data-at="1600" attributeName="stroke-dashoffset" from="1" to="0" dur="1.1s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".3 .1 .3 1"/></path>
+                <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" filter="url(#pz-smooth)">
+                  <!-- one swoosh up the paisley's own S: body curl → tail → stem → top leaf -->
+                  <path pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" stroke-width="270" d="M200 1090 C110 1030 160 915 255 880 C335 850 385 760 378 600 C372 520 315 470 310 380 C305 300 380 250 450 220 C505 195 525 145 505 70"><animate data-at="150" attributeName="stroke-dashoffset" from="1" to="0" dur="1.3s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".55 0 .15 1"/></path>
+                  <path pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" stroke-width="170" d="M335 860 C235 875 160 825 170 720 C176 650 240 615 290 655"><animate data-at="550" attributeName="stroke-dashoffset" from="1" to="0" dur="0.6s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".3 0 .2 1"/></path>
+                  <path pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" stroke-width="160" d="M320 450 C240 420 185 385 205 320 M305 465 C235 470 185 505 195 560"><animate data-at="850" attributeName="stroke-dashoffset" from="1" to="0" dur="0.6s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".3 0 .2 1"/></path>
+                  <path pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" stroke-width="160" d="M420 250 C480 285 525 335 515 440 M455 230 C535 215 600 230 650 205 M520 300 C570 300 615 320 615 345"><animate data-at="1000" attributeName="stroke-dashoffset" from="1" to="0" dur="0.7s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".3 0 .2 1"/></path>
                 </g>
                 <rect x="-100" y="-100" width="929" height="1356" fill="#fff" opacity="0">
-                  <animate data-at="2500" attributeName="opacity" from="0" to="1" dur="0.8s" begin="indefinite" fill="freeze"/>
+                  <animate data-at="1500" attributeName="opacity" from="0" to="1" dur="0.5s" begin="indefinite" fill="freeze"/>
                 </rect>
               </mask>
             </defs>
             <g style="filter:drop-shadow(0 14px 22px rgba(23,92,82,0.12))">
-              <image href="art/paisley.png" width="729" height="1156" mask="url(#pz-mask)" filter="url(#pz-ripple)"/>
+              <image href="art/paisley.png" width="729" height="1156" mask="url(#pz-mask)"/>
+            </g>
+            <!-- the water swoosh itself: a mint streak racing up the S just ahead of the drawing -->
+            <g filter="url(#pz-glow)">
+              <path d="M200 1090 C110 1030 160 915 255 880 C335 850 385 760 378 600 C372 520 315 470 310 380 C305 300 380 250 450 220 C505 195 525 145 505 70" pathLength="1" fill="none" stroke="#aee0d1" stroke-width="34" stroke-linecap="round" stroke-dasharray="0.22 2" stroke-dashoffset="0.22" opacity="0">
+                <animate data-at="100" attributeName="stroke-dashoffset" from="0.22" to="-1" dur="1.3s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".55 0 .15 1"/>
+                <animate data-at="100" attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.15;0.7;1" dur="1.3s" begin="indefinite" fill="freeze"/>
+              </path>
+              <path d="M200 1090 C110 1030 160 915 255 880 C335 850 385 760 378 600 C372 520 315 470 310 380 C305 300 380 250 450 220 C505 195 525 145 505 70" pathLength="1" fill="none" stroke="#4aad99" stroke-width="12" stroke-linecap="round" stroke-dasharray="0.22 2" stroke-dashoffset="0.22" opacity="0">
+                <animate data-at="170" attributeName="stroke-dashoffset" from="0.22" to="-1" dur="1.35s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".55 0 .15 1"/>
+                <animate data-at="170" attributeName="opacity" values="0;0.5;0.5;0" keyTimes="0;0.15;0.7;1" dur="1.35s" begin="indefinite" fill="freeze"/>
+              </path>
             </g>
           </svg>
         </div>
